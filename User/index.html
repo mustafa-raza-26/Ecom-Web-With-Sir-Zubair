@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back | Secure Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Animated Orbs for Depth -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Brand Header -->
+            <div class="login-header">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+                <h2>Welcome Back</h2>
+                <p>Please enter your credentials to access your account.</p>
+            </div>
+
+            <!-- Login Form -->
+            <form class="login-form">
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="userEmail" name="email" placeholder="name@example.com" required>
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="userPassword" name="password" placeholder="••••••••" required>
+                        <i class="fa-regular fa-eye toggle-password" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="form-actions">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember">
+                        <span class="checkmark"></span>
+                        Remember for 30 days
+                    </label>
+                    <a href="./forgotpassword.html" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="loginBtn" class="btn-submit">Sign In</button>
+
+                <!-- Divider -->
+                <div class="auth-divider">
+                    <span>or continue with</span>
+                </div>
+
+                <!-- Social Login Buttons -->
+                <div class="social-login">
+                    <button type="button" id="googleBtn" class="btn-social">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google"> Google
+                    </button>
+                </div>
+            </form>
+
+            <!-- Footer Signup Link -->
+            <div class="login-footer">
+                <p>Don't have an account? <a href="./signup.html">Sign up for free</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple Script to Toggle Password Visibility -->
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+    <script type="module" src="login.js"></script>
+</body>
+</html>

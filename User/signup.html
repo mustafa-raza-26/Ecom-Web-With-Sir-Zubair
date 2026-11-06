@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Get Started</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Animated Orbs for Depth -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Brand Header -->
+            <div class="login-header">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+                <h2>Create an Account</h2>
+                <p>Start your 30-day free trial. No credit card required.</p>
+            </div>
+
+            <!-- Signup Form -->
+            <form action="#" method="POST" class="login-form">
+                <!-- Full Name Field -->
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" id="userName" name="fullname" placeholder="Alex Johnson" required>
+                    </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="userEmail" name="email" placeholder="name@example.com" required>
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="userPassword" name="password" placeholder="Must be at least 8 chars" required minlength="8">
+                        <i class="fa-regular fa-eye toggle-password" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <!-- Age Field -->
+                 <div class="form-group">
+                    <label for="age">Age</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="number" id="userAge" name="age" placeholder="Enter Your Age">
+                    </div>
+                </div>
+
+                <!-- D-O-B Field -->
+                 <div class="form-group">
+                    <label for="dob">D-O-B</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-calendar"></i>
+                        <input type="date" id="userDob" name="dob" placeholder="Enter Your Date of Birth">
+                    </div>
+                </div>
+
+                <!-- D-O-B Field -->
+                 <div class="form-group">
+                    <label for="cnic">CNIC</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="userCnic" name="cnic" placeholder="Enter Your CNIC">
+                    </div>
+                </div>
+
+                <!-- Contact Field -->
+                 <div class="form-group">
+                    <label for="conatct">Contact</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="number" id="userContact" name="conatct" placeholder="Contact Number">
+                    </div>
+                </div>
+
+                <!-- image Field -->
+                 <div class="form-group">
+                    <label for="conatct">Image</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="file" id="imageUpload">
+                        <img src="" alt="" id="imageView">
+                    </div>
+                </div>
+
+                <!-- Terms & Conditions Checkbox -->
+                <div class="form-actions" style="margin-bottom: 20px;">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="terms" required>
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#" class="forgot-password">Terms & Conditions</a>
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="signupBtn" class="btn-submit">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script to Toggle Password Visibility -->
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+    <script type="module" src="./signup.js"></script>
+</body>
+</html>
