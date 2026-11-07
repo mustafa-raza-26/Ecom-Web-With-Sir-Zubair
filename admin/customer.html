@@ -44,95 +44,26 @@
                 </div>
             </nav>
 
-            <!-- Main Content -->
+            <!-- Main Content Area -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
                 <div class="table-container bg-white p-4 rounded-4 shadow-sm border border-opacity-10">
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h2 class="h4 fw-bold text-dark m-0">Total User</h2>
+                        <h2 class="h4 fw-bold text-dark m-0">Total Users</h2>
                     </div>
-
+                    
                     <div class="table-responsive">
                         <table class="table table-hover align-middle mb-0">
                             <thead class="table-light text-uppercase fs-7">
                                 <tr>
                                     <th class="py-3">User Id</th>
-                                    <th class="py-3">UserName</th>
+                                    <th class="py-3">Image</th>
+                                    <th class="py-3">Name</th>
                                     <th class="py-3">Email</th>
-                                    <th class="py-3">Contact No</th>
-                                    <th class="py-3">Account Create Date</th>
+                                    <th class="py-3">Contact Number</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>PT01</td>
-                                    <td><span class="user-cell"><span class="user-avatar">A</span>Ali Khan</span></td>
-                                    <td>ali.khan@gmail.com</td>
-                                    <td>+92 300 1234567</td>
-                                    <td>15/02/2023</td>
-                                </tr>
-                                <tr>
-                                    <td>PT02</td>
-                                    <td><span class="user-cell"><span class="user-avatar">A</span>Ahmed Raza</span></td>
-                                    <td>ahmed.raza@yahoo.com</td>
-                                    <td>+92 301 2345678</td>
-                                    <td>28/07/2021</td>
-                                </tr>
-                                <tr>
-                                    <td>PT03</td>
-                                    <td><span class="user-cell"><span class="user-avatar">S</span>Saqib Malik</span></td>
-                                    <td>saqib.malik@gmail.com</td>
-                                    <td>+92 302 3456789</td>
-                                    <td>09/11/2024</td>
-                                </tr>
-                                <tr>
-                                    <td>PT04</td>
-                                    <td><span class="user-cell"><span class="user-avatar">U</span>Usman Tariq</span></td>
-                                    <td>usman.tariq@hotmail.com</td>
-                                    <td>+92 303 4567890</td>
-                                    <td>21/03/2022</td>
-                                </tr>
-                                <tr>
-                                    <td>PT05</td>
-                                    <td><span class="user-cell"><span class="user-avatar">H</span>Hassan Ali</span></td>
-                                    <td>hassan.ali@gmail.com</td>
-                                    <td>+92 304 5678901</td>
-                                    <td>14/08/2020</td>
-                                </tr>
-                                <tr>
-                                    <td>PT06</td>
-                                    <td><span class="user-cell"><span class="user-avatar">B</span>Bilal Ahmed</span></td>
-                                    <td>bilal.ahmed@gmail.com</td>
-                                    <td>+92 305 6789012</td>
-                                    <td>30/12/2023</td>
-                                </tr>
-                                <tr>
-                                    <td>PT07</td>
-                                    <td><span class="user-cell"><span class="user-avatar">Z</span>Zain Abbas</span></td>
-                                    <td>zain.abbas@yahoo.com</td>
-                                    <td>+92 306 7890123</td>
-                                    <td>05/05/2021</td>
-                                </tr>
-                                <tr>
-                                    <td>PT08</td>
-                                    <td><span class="user-cell"><span class="user-avatar">H</span>Hamza Sheikh</span></td>
-                                    <td>hamza.sheikh@gmail.com</td>
-                                    <td>+92 307 8901234</td>
-                                    <td>17/09/2024</td>
-                                </tr>
-                                <tr>
-                                    <td>PT09</td>
-                                    <td><span class="user-cell"><span class="user-avatar">F</span>Farhan Iqbal</span></td>
-                                    <td>farhan.iqbal@hotmail.com</td>
-                                    <td>+92 308 9012345</td>
-                                    <td>11/01/2022</td>
-                                </tr>
-                                <tr>
-                                    <td>PT10</td>
-                                    <td><span class="user-cell"><span class="user-avatar">O</span>Owais Khan</span></td>
-                                    <td>owais.khan@gmail.com</td>
-                                    <td>+92 309 0123456</td>
-                                    <td>26/06/2025</td>
-                                </tr>
+                            <tbody id="userDataDisplay">
+                                <!-- Dynamic rows from users.js will append here -->
                             </tbody>
                         </table>
                     </div>
@@ -142,5 +73,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./users.js"></script>
 </body>
 </html>

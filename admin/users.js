@@ -23,22 +23,36 @@ async function getAllStats() {
 
         for (let value of data.docs) {
             let userData = value.data();
+            console.log(userData);
+            
             
             // Use fallback values if fields might be missing in Firestore
             let userName = userData.userName || 'N/A';
             let email = userData.email || 'N/A';
+            let image = userData.image
             // Note: Make sure this matches your Firestore field name exactly (e.g., userData.contact_Number or userData.conatct_Number)
             let contact = userData.conatct_Number || userData.contact_Number || 'N/A';
-
-            userDataDisplay.innerHTML += `
+            if (image == '') {
+             userDataDisplay.innerHTML += `
                 <tr>
                     <td>${value.id}</td> <!-- Displays the unique Firebase Document ID -->
+                    <td>No Picture</td>
                     <td>${userName}</td>
                     <td>${email}</td>
                     <td>${contact}</td>
-                    <td><i class="fa-regular fa-eye" style="cursor: pointer;"></i></td>
+                </tr>`;   
+            }else{
+                userDataDisplay.innerHTML += `
+                <tr>
+                    <td>${value.id}</td> <!-- Displays the unique Firebase Document ID -->
+                    <td><img src=${image} style="width:50px; height:50px;"></td>
+                    <td>${userName}</td>
+                    <td>${email}</td>
+                    <td>${contact}</td>
                 </tr>
             `;
+            }
+            
         }
     } catch (error) {
         console.error("Error fetching user stats: ", error);

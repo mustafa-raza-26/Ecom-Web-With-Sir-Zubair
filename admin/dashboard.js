@@ -7,18 +7,33 @@ let app = initializeApp(firebaseConfig)
 let db = getFirestore(app)
 
 let totalUser = document.getElementById('totalUser')
+let totalCategories = document.getElementById('totalCategories')
+let totalProduct = document.getElementById('totalProduct')
 
 async function getAllStats() {
+    // user count
     const userRef = collection(db, 'users')
     const data = await getDocs(userRef)
-    console.log(data.docs);
     let userCount = data.docs.length
     totalUser.innerText = ''
     totalUser.innerText = userCount
 
-    for(let value of data.docs){
-        console.log(value.data());
-    }
+
+    // category count
+    const categoryRef = collection(db, 'Categories')
+    const categoryData = await getDocs(categoryRef)
+    let categoryCount = data.docs.length
+    totalCategories.innerText = ''
+    totalCategories.innerText = categoryCount
+
+
+    // Product count
+    const itemRef = collection(db, 'products')
+    const itemData = await getDocs(itemRef)
+    let itemCount = data.docs.length
+    totalProduct.innerText = ''
+    totalProduct.innerText = itemCount
+
 
 }
 getAllStats();

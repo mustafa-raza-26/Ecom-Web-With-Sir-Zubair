@@ -50,14 +50,16 @@ if (userPassword.value == userConfirmPassword.value) {
 
 // Show / hide password
 document.querySelectorAll('[data-toggle-pass]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-        const input = document.getElementById(btn.dataset.togglePass);
-        const icon = btn.querySelector('i');
-        const show = input.type === 'password';
- 
-        input.type = show ? 'text' : 'password';
-        icon.classList.toggle('fa-eye', !show);
-        icon.classList.toggle('fa-eye-slash', show);
-        btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
-    });
+    if (btn) {
+        btn.addEventListener('click', () => {
+            let input = document.getElementById(btn.dataset.togglePass);
+            let icon = btn.querySelector('i');
+            let show = input.type === 'password';
+            
+            input.type = show ? 'text' : 'password';
+            icon.classList.toggle('fa-eye', !show);
+            icon.classList.toggle('fa-eye-slash', show);
+            btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+        });
+    }
 });
