@@ -44,11 +44,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="loginPassword" class="form-label">Password</label>
+                        <label for="userPassword" class="form-label">Password</label>
                         <div class="input-icon">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" id="userPassword" class="form-control has-icon has-toggle" placeholder="Enter your password" autocomplete="current-password" minlength="6" required>
-                            <button type="button" class="toggle-pass" data-toggle-pass="loginPassword" aria-label="Show password">
+                            <input type="password" id="userPassword" class="form-control has-icon has-toggle"
+                                placeholder="At least 6 characters" autocomplete="new-password" minlength="6" required>
+                            <button type="button" class="toggle-pass" data-toggle-pass="userPassword"
+                                aria-label="Show password">
                                 <i class="fa-regular fa-eye"></i>
                             </button>
                             <div class="invalid-feedback">Password must be at least 6 characters.</div>
